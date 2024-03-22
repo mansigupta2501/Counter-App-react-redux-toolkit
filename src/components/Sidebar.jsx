@@ -24,7 +24,7 @@ const categories = [
 ];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
-function ResponsiveAppBar() {
+function ResponsiveAppBar({children}) {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
   // const navigate = useNavigation();
@@ -50,6 +50,7 @@ function ResponsiveAppBar() {
   }
 
   return (
+    <>
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
@@ -103,7 +104,7 @@ function ResponsiveAppBar() {
             >
               {categories.map((category) => (
                 <MenuItem key={category.name} onClick={()=>handleRouting(category.route)}>
-                  <Typography textAlign="center">{category}</Typography>
+                  <Typography textAlign="center">{category.name}</Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -171,6 +172,8 @@ function ResponsiveAppBar() {
         </Toolbar>
       </Container>
     </AppBar>
+    {children}
+    </>
   );
 }
 export default ResponsiveAppBar;
