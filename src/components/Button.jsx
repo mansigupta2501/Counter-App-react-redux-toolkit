@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux";
 import { useRef } from "react";
-import { counterActions, privacyToggleActions } from "../store";
+import { counterActions } from '../store/counter'
+import { privacyToggleActions } from '../store/privacy'
 
 const Button = () => {
   const dispatch = useDispatch();
