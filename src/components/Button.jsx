@@ -3,7 +3,7 @@ import { useRef } from "react";
 import { counterActions } from '../store/counter'
 import { privacyToggleActions } from '../store/privacy'
 
-const Button = () => {
+const CounterBtn = () => {
   const dispatch = useDispatch();
   const inputElement = useRef();
 
@@ -49,4 +49,4 @@ const Button = () => {
   );
 };
 
-export default Button;
+export default CounterBtn;
